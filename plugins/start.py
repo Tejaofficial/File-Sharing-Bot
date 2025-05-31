@@ -115,14 +115,7 @@ async def start_command(client: Client, message: Message):
 
         return
     else:
-        reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]
-            ]
-        )
+        reply_markup = None
         if START_PIC:  # Check if START_PIC has a value
             await message.reply_photo(
                 photo=START_PIC,
